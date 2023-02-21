@@ -1,4 +1,4 @@
-/* 
+/*
 // 07. Services
 */
 
@@ -84,7 +84,7 @@ $value in $theme-colors {
             color: #{$value};
         }
         &:before {
-            background: rgba($value, 0.05);
+            background: rgba($value, 0.45);
         }
         &:hover {
             &:before {

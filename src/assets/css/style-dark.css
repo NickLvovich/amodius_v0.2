@@ -21,11 +21,11 @@
 14.Contact
 15.Footer
 ***********************/
-/* 
+/*
 // variables-dark.scss
 */
 @import url("https://fonts.googleapis.com/css?family=Rubik:300,400,500,700&display=swap");
-/* 
+/*
 // 1. General
 */
 a {
@@ -44,7 +44,7 @@ p {
   line-height: 1.8;
 }
 
-/* 
+/*
 // 2. Menu
 */
 .nav-item .nav-link {
@@ -225,7 +225,7 @@ p {
   }
 }
 
-/* 
+/*
 // 03.Components
 */
 .btn {
@@ -607,7 +607,7 @@ p {
   color: #fbfbfb !important;
 }
 
-/* 
+/*
 // 04.Helper
 */
 .text-primary {
@@ -798,7 +798,7 @@ p {
   left: 0;
 }
 
-/* 
+/*
 // 05.Loader
 */
 #preloader {

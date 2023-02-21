@@ -1,6 +1,6 @@
-import React, { Component, Suspense } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import './App.css';
-import {withRouter} from "react-router-dom";
+import { withRouter } from 'react-router-dom';
 import './theme.scss';
 const NavbarPage = React.lazy(() => import('./components/Navbar/Navbar_Page'));
 const Section = React.lazy(() => import('./Section'));
@@ -13,44 +13,31 @@ const GetInTouch = React.lazy(() => import('./components/GetInTouch/GetInTouch')
 const Subscribe = React.lazy(() => import('./components/Subscribe/Subscribe'));
 const Footer = React.lazy(() => import('./components/Footer/footer'));
 
-class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      navItems : [
-        { id: 1 , idnm : "home", navheading: "Home" },
-        { id: 2 , idnm : "services", navheading: "Projects" },
-        { id: 3 , idnm : "about", navheading: "About" },
-        { id: 4 , idnm : "getInTouch", navheading: "Contacts" },
-        { id: 5 , idnm : "clients", navheading: "Clients" },
-      ],
-      pos : document.documentElement.scrollTop,
-      imglight : true,
-      navClass : "navbar-light"
-    };
-  }
+const App = (props) => {
+  const [navItems, setNavItems] = useState([
+    { id: 1, idnm: 'home', navheading: 'Home' },
+    { id: 2, idnm: 'services', navheading: 'Projects' },
+    { id: 3, idnm: 'about', navheading: 'About' },
+    { id: 4, idnm: 'getInTouch', navheading: 'Contacts' },
+    { id: 5, idnm: 'clients', navheading: 'Clients' },
+  ]);
+  const [pos, setPos] = useState(document.documentElement.scrollTop );
+  const [imglight, setImgLight] = useState(true);
+  const [navClass, setNavClass] = useState('navbar-light');
 
-  componentDidMount() {
-    window.addEventListener("scroll", this.scrollNavigation, true);
-  }
+  const scrollNavigation = () => {
+    let scrollup = document.documentElement.scrollTop;
 
-  componentWillUnmount(){
-    window.removeEventListener("scroll", this.scrollNavigation, true);
-  }
-
-  scrollNavigation = () => {
-    var scrollup=document.documentElement.scrollTop;
-    if(scrollup > this.state.pos)
-    {
-      this.setState({navClass : "navbar-light nav-sticky", imglight : false});
-    }
-    else
-    {
-      this.setState({navClass : "navbar-light", imglight : true});
+    if (scrollup > pos) {
+      setNavClass('navbar-light nav-sticky');
+      setImgLight(false);
+    } else {
+      setNavClass('navbar-light');
+      setImgLight(true);
     }
   };
 
-  Loader = () => {
+  const Loader = () => {
     return (
       <div id="preloader">
         <div id="status">
@@ -61,47 +48,48 @@ class App extends Component {
         </div>
       </div>
     );
-  }
+  };
 
-  render() {
-    return (
-      <React.Fragment>
-        <Suspense fallback = {this.Loader()} >
+  useEffect(() => {
+    window.addEventListener('scroll', scrollNavigation, true);
+    return () => window.removeEventListener('scroll', scrollNavigation, true);
+  }, [pos]);
 
-          {/* Importing Navbar */}
-          <NavbarPage navItems={this.state.navItems} navClass={this.state.navClass} imglight={this.state.imglight} isLight={true} />
+  return (
+    <React.Fragment>
+      <Suspense fallback={Loader()}>
+        {/* Importing Navbar */}
+        <NavbarPage navItems={navItems} navClass={navClass} imglight={imglight} isLight={true} />
 
-          {/* Importing section */}
-          <Section/>
+        {/* Importing section */}
+        <Section />
 
-          {/* Importing service */}
-          <Service/>
+        {/* Importing service */}
+        <Service />
 
-          {/* Importing about us */}
-          <About/>
+        {/* Importing about us */}
+        <About />
 
-          {/* Importing feature */}
-          <Feature/>
+        {/* Importing feature */}
+        <Feature />
 
-          {/* Importing counter */}
-          <Counter/>
+        {/* Importing counter */}
+        <Counter />
 
-          {/* Importing clients */}
-          <Clients/>
+        {/* Importing clients */}
+        <Clients />
 
-          {/* Importing get in touch */}
-          <GetInTouch/>
+        {/* Importing get in touch */}
+        <GetInTouch />
 
-          {/* Importing subscribe */}
-          {/*<Subscribe/>*/}
+        {/* Importing subscribe */}
+        {/*<Subscribe/>*/}
 
-          {/* Importing footer */}
-          <Footer/>
-        </Suspense>
-
-      </React.Fragment>
-    );
-  }
-}
+        {/* Importing footer */}
+        <Footer />
+      </Suspense>
+    </React.Fragment>
+  );
+};
 
 export default withRouter(App);
