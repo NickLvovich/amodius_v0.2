@@ -3,17 +3,17 @@ import {
     Navbar,
     Nav,
     NavbarBrand,
-    NavbarToggler,
     NavItem,
     NavLink,
     Container,
     Collapse,
 } from 'reactstrap';
 import ScrollspyNav from './scrollSpy';
-
 //Import Images
 import logolight from '../../assets/images/Amodius.svg';
 import logodark from '../../assets/images/AmodiusDark.svg';
+import MenuIcon from '@mui/icons-material/Menu';
+import { IconButton } from '@mui/material';
 
 const NavbarPage = (props) => {
     const [isOpenMenu, setIsOpenMenu] = useState(false);
@@ -40,10 +40,9 @@ const NavbarPage = (props) => {
                         <img src={logodark} alt="" height="25" />
                       )}
                   </NavbarBrand>
-                  <NavbarToggler onClick={toggle}>
-                      <i className="mdi mdi-menu"></i>
-                  </NavbarToggler>
-
+                  <IconButton onClick={toggle} style={{ color: props.imglight ? '#FFFFFF' : '#D50000' }} aria-label="delete" size="large">
+                      <MenuIcon fontSize="inherit" />
+                  </IconButton>
                   <Collapse id="navbarCollapse" isOpen={isOpenMenu} navbar>
                       <ScrollspyNav
                         scrollTargetIds={targetId}

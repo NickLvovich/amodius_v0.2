@@ -76,11 +76,11 @@ const App = (props) => {
         {/* Importing counter */}
         <Counter />
 
-        {/* Importing clients */}
-        <Clients />
-
         {/* Importing get in touch */}
         <GetInTouch />
+
+        {/* Importing clients */}
+        <Clients />
 
         {/* Importing subscribe */}
         {/*<Subscribe/>*/}

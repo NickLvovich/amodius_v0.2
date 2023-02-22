@@ -1,4 +1,4 @@
-/* 
+/*
 // 2. Menu
 */
 
@@ -18,6 +18,9 @@
     margin-bottom: 0px;
     transition: all 0.5s ease-in-out;
     background-color: transparent;
+    .MuiIconButton-root {
+        display: none;
+    }
     .logo {
         .logo-dark {
             display: none;
@@ -149,23 +152,27 @@
 
 /*---Responsive--*/
 
-@media (min-width: 200px) and (max-width: 768px) {
+@media (min-width: 200px) and (max-width: 991px) {
     .navbar-custom {
         margin-top: 0px;
-        background-color: $white !important;
         box-shadow: 0 3px 10px rgba($black, 0.08);
         color: $white !important;
+        background-color: $warning;
+
+        .MuiIconButton-root {
+            display: flex;
+        }
         .navbar-nav {
             margin-top: 0px;
             li {
                 a {
                     transition: all 0.4s;
-                    color: $muted !important;
+                    color: $white !important;
                     margin: 0px;
                 }
                 &.active {
                     a {
-                        border-color: transparent;
+                        border-color: $primary;
                     }
                 }
             }
