@@ -34,7 +34,7 @@ const Footer = () => {
     ];
 
     return (
-      <React.Fragment>
+      <>
           <section className="footer">
               <Container>
                   <Row>
@@ -78,7 +78,8 @@ const Footer = () => {
                                       Our Address
                                   </h6>
                                   <p className="text-muted f-14">
-                                      4806 Spring Haven Trail South Orange, NJ 07079
+                                      rue des Anciens Etangs 40
+                                      1190 Brussels
                                   </p>
                                   <h6 className="text-muted pb-2">Email: Support@gamil.com</h6>
                                   {/*<ul className="list-unstyled footer-social-list mt-4">*/}
@@ -107,7 +108,7 @@ const Footer = () => {
                   <FooterLinks />
               </Container>
           </section>
-      </React.Fragment>
+      </>
     );
 };
 

@@ -6,7 +6,7 @@ import SectionTitle from "../common/section-title";
 
 const About = () => {
     return (
-      <React.Fragment>
+      <>
           <section className="section bg-light" id="about">
               <Container>
                   <SectionTitle
@@ -34,7 +34,7 @@ const About = () => {
                   </Row>
               </Container>
           </section>
-      </React.Fragment>
+      </>
     );
 }
 

@@ -25,16 +25,12 @@ class GetInTouch extends Component {
                                     <p className="text-muted f-15 mb-4">Et harum quidem rerum facilis est et expedita sit distinctio at libero.</p>
                                 </div>
                                 <Row>
-                                    <Col md={6}>
+                                    <Col md={12}>
                                         <div className="contact-address">
-                                            <h5 className="text-dark mb-3 f-16">Address - A</h5>
-                                            <p className="text-muted f-15">3165 Roosevelt Wilson Riverside, CA 92507</p>
-                                        </div>
-                                    </Col>
-                                    <Col md={6}>
-                                        <div className="contact-address">
-                                            <h5 className="text-dark mb-3 f-16">Address - B</h5>
-                                            <p className="text-muted f-15">1121 Bombardier Way Southfield, MI 48075</p>
+                                            <h5 className="text-dark mb-3 f-16">Address</h5>
+                                            <p className="text-muted f-15">rue des Anciens Etangs 40
+                                                1190 Brussels
+                                            </p>
                                         </div>
                                     </Col>
                                 </Row>
