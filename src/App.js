@@ -74,13 +74,13 @@ const App = (props) => {
         <Feature />
 
         {/* Importing counter */}
-        <Counter />
+        {/*<Counter />*/}
 
         {/* Importing get in touch */}
         <GetInTouch />
 
         {/* Importing clients */}
-        <Clients />
+        {/*<Clients />*/}
 
         {/* Importing subscribe */}
         {/*<Subscribe/>*/}

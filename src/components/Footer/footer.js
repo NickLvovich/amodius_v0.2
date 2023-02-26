@@ -10,27 +10,27 @@ import logodark from "../../assets/images/AmodiusDark.svg";
 
 const Footer = () => {
     const links = [
-        {
-            id: 1,
-            title: "Services",
-            child: [
-                { title: "Digital Marketing", link: "/" },
-                { title: "Business Analysis", link: "/" },
-                { title: "How It Work", link: "/" },
-                { title: "Fix & Flip", link: "/" },
-                { title: "Social Activation", link: "/" },
-            ],
-        },
-        {
-            id: 2,
-            title: "About Us",
-            child: [
-                { title: "Contact Us", link: "/" },
-                { title: "FAQs", link: "/" },
-                { title: "Blog", link: "/" },
-                { title: "Privacy Policy", link: "/" },
-            ],
-        },
+        // {
+        //     id: 1,
+        //     title: "Services",
+        //     child: [
+        //         { title: "Digital Marketing", link: "/" },
+        //         { title: "Business Analysis", link: "/" },
+        //         { title: "How It Work", link: "/" },
+        //         { title: "Fix & Flip", link: "/" },
+        //         { title: "Social Activation", link: "/" },
+        //     ],
+        // },
+        // {
+        //     id: 2,
+        //     title: "About Us",
+        //     child: [
+        //         { title: "Contact Us", link: "/" },
+        //         { title: "FAQs", link: "/" },
+        //         { title: "Blog", link: "/" },
+        //         { title: "Privacy Policy", link: "/" },
+        //     ],
+        // },
     ];
 
     return (
@@ -38,7 +38,7 @@ const Footer = () => {
           <section className="footer">
               <Container>
                   <Row>
-                      <Col lg={4}>
+                      <Col lg={6}>
                           <div className="mb-4">
                               <Link to="/">
                                   <img
@@ -56,24 +56,24 @@ const Footer = () => {
                               </h6>
                           </div>
                       </Col>
-                      <Col lg={8}>
+                      <Col lg={6}>
                           <Row>
-                              {links.map((link, key) => (
-                                <Col key={key} md={4}>
-                                    <h6 className="footer-list-title text-dark mb-3">
-                                        {link.title}
-                                    </h6>
-                                    <ul className="list-unstyled company-sub-menu">
-                                        {link.child.map((fLink, key) => (
-                                          <li key={key}>
-                                              <Link to={fLink.link}>{fLink.title}</Link>
-                                          </li>
-                                        ))}
-                                    </ul>
-                                </Col>
-                              ))}
+                              {/*{links.map((link, key) => (*/}
+                              {/*  <Col key={key} md={4}>*/}
+                              {/*      <h6 className="footer-list-title text-dark mb-3">*/}
+                              {/*          {link.title}*/}
+                              {/*      </h6>*/}
+                              {/*      <ul className="list-unstyled company-sub-menu">*/}
+                              {/*          {link.child.map((fLink, key) => (*/}
+                              {/*            <li key={key}>*/}
+                              {/*                <Link to={fLink.link}>{fLink.title}</Link>*/}
+                              {/*            </li>*/}
+                              {/*          ))}*/}
+                              {/*      </ul>*/}
+                              {/*  </Col>*/}
+                              {/*))}*/}
 
-                              <Col md={4}>
+                              <Col md={12}>
                                   <h6 className="footer-list-title text-dark mb-3">
                                       Our Address
                                   </h6>
@@ -81,23 +81,23 @@ const Footer = () => {
                                       4806 Spring Haven Trail South Orange, NJ 07079
                                   </p>
                                   <h6 className="text-muted pb-2">Email: Support@gamil.com</h6>
-                                  <ul className="list-unstyled footer-social-list mt-4">
-                                      <li className="list-inline-item">
-                                          <Link to="#">
-                                              <i className="mdi mdi-facebook"></i>
-                                          </Link>
-                                      </li>
-                                      <li className="list-inline-item">
-                                          <Link to="#">
-                                              <i className="mdi mdi-instagram"></i>
-                                          </Link>
-                                      </li>
-                                      <li className="list-inline-item">
-                                          <Link to="#">
-                                              <i className="mdi mdi-linkedin"></i>
-                                          </Link>
-                                      </li>
-                                  </ul>
+                                  {/*<ul className="list-unstyled footer-social-list mt-4">*/}
+                                  {/*    <li className="list-inline-item">*/}
+                                  {/*        <Link to="#">*/}
+                                  {/*            <i className="mdi mdi-facebook"></i>*/}
+                                  {/*        </Link>*/}
+                                  {/*    </li>*/}
+                                  {/*    <li className="list-inline-item">*/}
+                                  {/*        <Link to="#">*/}
+                                  {/*            <i className="mdi mdi-instagram"></i>*/}
+                                  {/*        </Link>*/}
+                                  {/*    </li>*/}
+                                  {/*    <li className="list-inline-item">*/}
+                                  {/*        <Link to="#">*/}
+                                  {/*            <i className="mdi mdi-linkedin"></i>*/}
+                                  {/*        </Link>*/}
+                                  {/*    </li>*/}
+                                  {/*</ul>*/}
                               </Col>
                           </Row>
                       </Col>
