@@ -9,7 +9,9 @@ import {
     Collapse,
 } from 'reactstrap';
 import ScrollspyNav from './scrollSpy';
+import { PHONE_NUMBER } from '../../helpers/constants';
 //Import Images
+import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import logolight from '../../assets/images/Amodius.svg';
 import logodark from '../../assets/images/AmodiusDark.svg';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -61,16 +63,6 @@ const NavbarPage = (props) => {
                                 </NavItem>
                               ))}
                           </Nav>
-                          <div className="call-no">
-                              <NavLink
-                                href="#"
-                                className={
-                                    props.isLight === true ? 'text-white' : 'text-warning'
-                                }
-                              >
-                                  <i className="mdi mdi-phone mr-1"></i> +00 1234 5678 90
-                              </NavLink>
-                          </div>
                       </ScrollspyNav>
                   </Collapse>
               </Container>

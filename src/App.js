@@ -2,6 +2,7 @@ import React, { useState, useEffect, Suspense } from 'react';
 import './App.css';
 import { withRouter } from 'react-router-dom';
 import './theme.scss';
+import {NAV_ITEMS} from "./helpers/constants";
 const NavbarPage = React.lazy(() => import('./components/Navbar/Navbar_Page'));
 const Section = React.lazy(() => import('./Section'));
 const Service = React.lazy(() => import('./components/Service/service'));
@@ -14,13 +15,6 @@ const Subscribe = React.lazy(() => import('./components/Subscribe/Subscribe'));
 const Footer = React.lazy(() => import('./components/Footer/footer'));
 
 const App = (props) => {
-  const [navItems, setNavItems] = useState([
-    { id: 1, idnm: 'home', navheading: 'Home' },
-    { id: 2, idnm: 'services', navheading: 'Projects' },
-    { id: 3, idnm: 'about', navheading: 'About' },
-    { id: 4, idnm: 'getInTouch', navheading: 'Contacts' },
-    { id: 5, idnm: 'clients', navheading: 'Clients' },
-  ]);
   const [pos, setPos] = useState(document.documentElement.scrollTop );
   const [imglight, setImgLight] = useState(true);
   const [navClass, setNavClass] = useState('navbar-light');
@@ -56,10 +50,10 @@ const App = (props) => {
   }, [pos]);
 
   return (
-    <React.Fragment>
-      <Suspense fallback={Loader()}>
+    <>
+      <Suspense>
         {/* Importing Navbar */}
-        <NavbarPage navItems={navItems} navClass={navClass} imglight={imglight} isLight={true} />
+        <NavbarPage navItems={NAV_ITEMS} navClass={navClass} imglight={imglight} isLight={true} />
 
         {/* Importing section */}
         <Section />
@@ -88,7 +82,7 @@ const App = (props) => {
         {/* Importing footer */}
         <Footer />
       </Suspense>
-    </React.Fragment>
+    </>
   );
 };
 

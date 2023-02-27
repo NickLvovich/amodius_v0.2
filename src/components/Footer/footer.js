@@ -7,6 +7,7 @@ import FooterLinks from "./footer-links";
 
 //Import Logo
 import logodark from "../../assets/images/AmodiusDark.svg";
+import {EMAIL, PHONE_NUMBER} from "../../helpers/constants";
 
 const Footer = () => {
     const links = [
@@ -36,28 +37,30 @@ const Footer = () => {
     return (
       <>
           <section className="footer">
-              <Container>
-                  <Row>
-                      <Col lg={6}>
-                          <div className="mb-4">
-                              <Link to="/">
-                                  <img
-                                    src={logodark}
-                                    alt=""
-                                    className="logo-dark"
-                                    height="26"
-                                  />
-                              </Link>
-                              <p className="text-muted mt-4 mb-2">
-                                  Yourcompanyemailid@gmail.com
-                              </p>
-                              <h6 className="text-muted font-weight-normal">
-                                  +00 1234-5678-90
-                              </h6>
-                          </div>
-                      </Col>
-                      <Col lg={6}>
-                          <Row>
+              {/*<Container>*/}
+              {/*    <Row>*/}
+              {/*        <Col lg={6}>*/}
+              {/*            <div className="mb-4">*/}
+              {/*                <Link to="/">*/}
+              {/*                    <img*/}
+              {/*                      src={logodark}*/}
+              {/*                      alt=""*/}
+              {/*                      className="logo-dark"*/}
+              {/*                      height="26"*/}
+              {/*                    />*/}
+              {/*                </Link>*/}
+              {/*                <p className="text-muted mt-4 mb-2">*/}
+              {/*                    {EMAIL}*/}
+              {/*                </p>*/}
+              {/*                <a href={`tel:${PHONE_NUMBER}`}>*/}
+              {/*                    <h6 className="text-muted font-weight-normal">*/}
+              {/*                        {PHONE_NUMBER}*/}
+              {/*                    </h6>*/}
+              {/*                </ a>*/}
+              {/*            </div>*/}
+              {/*        </Col>*/}
+              {/*        <Col lg={6}>*/}
+              {/*            <Row>*/}
                               {/*{links.map((link, key) => (*/}
                               {/*  <Col key={key} md={4}>*/}
                               {/*      <h6 className="footer-list-title text-dark mb-3">*/}
@@ -73,40 +76,40 @@ const Footer = () => {
                               {/*  </Col>*/}
                               {/*))}*/}
 
-                              <Col md={12}>
-                                  <h6 className="footer-list-title text-dark mb-3">
-                                      Our Address
-                                  </h6>
-                                  <p className="text-muted f-14">
-                                      rue des Anciens Etangs 40
-                                      1190 Brussels
-                                  </p>
-                                  <h6 className="text-muted pb-2">Email: Support@gamil.com</h6>
-                                  {/*<ul className="list-unstyled footer-social-list mt-4">*/}
-                                  {/*    <li className="list-inline-item">*/}
-                                  {/*        <Link to="#">*/}
-                                  {/*            <i className="mdi mdi-facebook"></i>*/}
-                                  {/*        </Link>*/}
-                                  {/*    </li>*/}
-                                  {/*    <li className="list-inline-item">*/}
-                                  {/*        <Link to="#">*/}
-                                  {/*            <i className="mdi mdi-instagram"></i>*/}
-                                  {/*        </Link>*/}
-                                  {/*    </li>*/}
-                                  {/*    <li className="list-inline-item">*/}
-                                  {/*        <Link to="#">*/}
-                                  {/*            <i className="mdi mdi-linkedin"></i>*/}
-                                  {/*        </Link>*/}
-                                  {/*    </li>*/}
-                                  {/*</ul>*/}
-                              </Col>
-                          </Row>
-                      </Col>
-                  </Row>
+                  {/*            <Col md={12}>*/}
+                  {/*                <h6 className="footer-list-title text-dark mb-3">*/}
+                  {/*                    Our Address*/}
+                  {/*                </h6>*/}
+                  {/*                <p className="text-muted f-14">*/}
+                  {/*                    rue des Anciens Etangs 40*/}
+                  {/*                    1190 Brussels*/}
+                  {/*                </p>*/}
+                  {/*                <h6 className="text-muted pb-2">Email: {EMAIL}</h6>*/}
+                  {/*                /!*<ul className="list-unstyled footer-social-list mt-4">*!/*/}
+                  {/*                /!*    <li className="list-inline-item">*!/*/}
+                  {/*                /!*        <Link to="#">*!/*/}
+                  {/*                /!*            <i className="mdi mdi-facebook"></i>*!/*/}
+                  {/*                /!*        </Link>*!/*/}
+                  {/*                /!*    </li>*!/*/}
+                  {/*                /!*    <li className="list-inline-item">*!/*/}
+                  {/*                /!*        <Link to="#">*!/*/}
+                  {/*                /!*            <i className="mdi mdi-instagram"></i>*!/*/}
+                  {/*                /!*        </Link>*!/*/}
+                  {/*                /!*    </li>*!/*/}
+                  {/*                /!*    <li className="list-inline-item">*!/*/}
+                  {/*                /!*        <Link to="#">*!/*/}
+                  {/*                /!*            <i className="mdi mdi-linkedin"></i>*!/*/}
+                  {/*                /!*        </Link>*!/*/}
+                  {/*                /!*    </li>*!/*/}
+                  {/*                /!*</ul>*!/*/}
+                  {/*            </Col>*/}
+                  {/*        </Row>*/}
+                  {/*    </Col>*/}
+                  {/*</Row>*/}
 
-                  {/* Render footer links */}
+                  {/*/!* Render footer links *!/*/}
                   <FooterLinks />
-              </Container>
+              {/*</Container>*/}
           </section>
       </>
     );

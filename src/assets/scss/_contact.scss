@@ -1,4 +1,4 @@
-/* 
+/*
 // 11. Contact
 */
 
@@ -8,7 +8,8 @@
     border-color: $warning;
 }
 
-.form-control {
+.MuiFormControl-root {
+    margin-bottom: 20px !important;
     padding: 18px 14px;
     font-size: 14px;
     background-color: rgba($dark, 0.01);

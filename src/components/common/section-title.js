@@ -9,7 +9,7 @@ class SectionTitle extends Component {
                             <Col lg={6} md={8}>
                                 <div className="title text-center mb-5">
                                     <h3 className="font-weight-normal text-dark">{this.props.title1} <span className="text-warning">{this.props.title2}</span></h3>
-                                    <p className="text-muted">{this.props.desc}</p>
+                                    {/*<p className="text-muted">{this.props.desc}</p>*/}
                                 </div>
                             </Col>
                         </Row>

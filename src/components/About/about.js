@@ -12,7 +12,7 @@ const About = () => {
                   <SectionTitle
                     title1="About "
                     title2="Us"
-                    desc="Maecenas tempus tellus eget condimentum rhoncus sem quam semper libero pulvinar hendrerit id lorem."
+                    // desc="Maecenas tempus tellus eget condimentum rhoncus sem quam semper libero pulvinar hendrerit id lorem."
                   />
 
                   <Row>

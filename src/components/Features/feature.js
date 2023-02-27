@@ -53,12 +53,12 @@ const Features = () => {
 
     return (
       <>
-          <section className="section" id="features">
+          <section className="section" id="team">
               <Container>
                   <SectionTitle
                     title1="Our "
                     title2="Team"
-                    desc="Association for Integration, Culture and the Sustainable Development Amodius."
+                    // desc="Association for Integration, Culture and the Sustainable Development Amodius."
                   />
 
                   <FeatureBox features={features} />
