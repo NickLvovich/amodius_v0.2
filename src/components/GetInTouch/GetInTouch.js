@@ -1,16 +1,41 @@
-import React, { useState } from 'react';
-import {Container, Row, Col, Label, Button, FormGroup} from "reactstrap";
-import { AvForm } from 'availity-reactstrap-validation';
-import {ADDRESS, EMAIL, PHONE_NUMBER, SUBJECTS} from "../../helpers/constants";
-import {FormControl, InputLabel, MenuItem, Select, TextField} from "@mui/material";
-
+import React, { useState, useRef } from 'react';
+import {Container, Row, Col, Button} from "reactstrap";
+import {ADDRESS, EMAIL, PHONE_NUMBER, SUBJECTS, UserData} from "../../helpers/constants";
+import {FormControl, InputLabel, MenuItem, Select, Snackbar, Stack, TextField, Alert} from "@mui/material";
+import emailjs from '@emailjs/browser';
+import SendIcon from '@mui/icons-material/Send';
 //Import Section Title
 import SectionTitle from "../common/section-title";
 
 const GetInTouch = () => {
+    const form = useRef();
     const [subjectItem, setSubjectItem] = useState('');
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
+    const [activeButton, setActiveButton] = useState(false)
+    const [open, setOpen] = useState(false)
+
+    const handleClose = (event, reason) => {
+        if (reason === 'clickaway') {
+            return;
+        }
+
+        setOpen(false);
+    };
+
+
+    const sendEmail = (e) => {
+        setActiveButton(true);
+        e.preventDefault();
+        emailjs.sendForm( UserData.serviceID, UserData.templateID, form.current, UserData.publicKey)
+          .then((result) => {
+              console.log(result.text);
+              setActiveButton(false);
+              setOpen(true);
+          }, (error) => {
+              console.log(error.text);
+          });
+    };
     const handleSubjectChange = (event) => {
         setSubjectItem(event.target.value);
     };
@@ -77,11 +102,12 @@ const GetInTouch = () => {
                         <Col lg={{size:7, offset:1}}>
                             <div className="custom-form mt-4 mt-lg-0">
                                 <div id="message"></div>
-                                <AvForm name="contact-form" id="contact-form">
+                                <form ref={form} onSubmit={sendEmail}>
                                     <Row>
                                         <Col lg={6}>
                                             <TextField
                                               id="name"
+                                              name="name"
                                               label="Name"
                                               variant="outlined"
                                               placeholder="Your Name..."
@@ -96,6 +122,7 @@ const GetInTouch = () => {
                                               id="email"
                                               label="Email"
                                               type="email"
+                                              name="email"
                                               value={email}
                                               onChange={handleEmailChange}
                                               placeholder="Your email address..."
@@ -112,6 +139,7 @@ const GetInTouch = () => {
                                                   id="subject"
                                                   value={subjectItem}
                                                   label="Subject"
+                                                  name="subject"
                                                   onChange={handleSubjectChange}
                                                   required
                                                 >
@@ -124,6 +152,7 @@ const GetInTouch = () => {
                                                 <TextField
                                                   id="comments"
                                                   label="Message"
+                                                  name="comments"
                                                   multiline
                                                   rows={3}
                                                   placeholder="Enter message.."
@@ -135,11 +164,26 @@ const GetInTouch = () => {
                                     </Row>
                                     <Row>
                                         <Col sm={12}>
-                                            <Button type="submit" id="submit" name="send" color="warning">Send Message <i className="mdi mdi-telegram ml-2"></i></Button>
+                                            <Button
+                                              type="submit"
+                                              id="submit"
+                                              name="send"
+                                              color="warning"
+                                              disabled={activeButton}
+                                            >
+                                                Send Message
+                                            </Button>
                                             <div id="simple-msg"></div>
                                         </Col>
                                     </Row>
-                                </AvForm>
+                                    <Stack spacing={2} sx={{ width: '100%' }}>
+                                        <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+                                            <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
+                                                Your message has been sent successfully!
+                                            </Alert>
+                                        </Snackbar>
+                                    </Stack>
+                                </form>
                             </div>
                         </Col>
                     </Row>

@@ -1,7 +1,11 @@
-/* 
+/*
 // 08. Features
 */
-
+.features-img {
+    img {
+        border-radius: 50%;
+    }
+}
 .features-box {
     background: rgba($white, 0.025);
     border-radius: 6px;

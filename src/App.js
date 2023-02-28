@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom';
 import './theme.scss';
 import {NAV_ITEMS} from "./helpers/constants";
 const NavbarPage = React.lazy(() => import('./components/Navbar/Navbar_Page'));
-const Section = React.lazy(() => import('./Section'));
+const Section = React.lazy(() => import('./components/Section/Section'));
 const Service = React.lazy(() => import('./components/Service/service'));
 const About = React.lazy(() => import('./components/About/about'));
 const Feature = React.lazy(() => import('./components/Features/feature'));
@@ -29,19 +29,6 @@ const App = (props) => {
       setNavClass('navbar-light');
       setImgLight(true);
     }
-  };
-
-  const Loader = () => {
-    return (
-      <div id="preloader">
-        <div id="status">
-          <div className="spinner">
-            <div className="dot1"></div>
-            <div className="dot2"></div>
-          </div>
-        </div>
-      </div>
-    );
   };
 
   useEffect(() => {
