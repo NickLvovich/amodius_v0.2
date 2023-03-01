@@ -30,7 +30,7 @@ const About = () => {
                               <Col md={6}>
                                   <h6 className="text-dark font-weight-light f-20 mb-3">Our Vision</h6>
                                   <p className="text-muted font-weight-light">
-                                      Amodius pursues its goal through its commitment with various partners among the non commercial and public organizations in initiatives aiming the promotion of a society centered on the human person and, and values such as freedom, peace and social justice.
+                                      Amodius pursues its goal through its commitment with various partners among the non commercial and public organizations in initiatives aiming the promotion of a society centered on the human person and values such as freedom, peace and social justice.
                                   </p>
                               </Col>
                           </Row>
